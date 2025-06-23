@@ -215,6 +215,8 @@ array[2][3]=[0]</pre>
 ---
 ##### 3. Queues
 + Queues are 1-D array.
++ these are the collection of homogeneous elements i.e same type of data or data type.
++ Queue index will always starts at zero.
 + Queues can grow and shrink dynamically, means we can push or pop.
 + They don't require any memory allocation.
 + Queues are more flexible than the dynamic arrays.
@@ -227,6 +229,7 @@ array[2][3]=[0]</pre>
      int q[$];
 + We can't use foreach to initialize an empty queue directly, but we can use it after allocating space.
 + We can directly insert or delete elements using built-in methods such as insert and delete.
++ size() method will return number of elements in queue.
 Example No.1
 <pre>module test;
   int q1[$];
@@ -271,3 +274,29 @@ Output is
 <pre>q='{2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 q='{2, 3, 4, 5, 7, 9, 10, 11}
 q='{50, 2, 3, 4, 5, 7, 9, 10, 11, 100}</pre>
++ There are 4 methods in queue namely
+    1. pop_front();<br>
+       Method removes and returns first element of the queue.
+    2. pop_back();<br>
+       Method removes and returns last element of the queue.
+    3. push_front(element);<br>
+       Method inserts element at the front of the queue.
+    4. push_back();<br>
+       Method inserts element at the back of the queue.<br>
+       
+Example No.1
+<pre>int q[$]='{5,7,9,11,2};
+q={q,6};//'{5,7,9,11,2,6}
+q={3,q};//'{3,5,7,9,11,2,6}
+q=q[1:$];//'{5,7,9,11,2,6}
+q=q[0:$-1];//'{5,7,9,11,2}
+q={q[0:3],9,q[4:$]};//'{5,7,9,11,9,2}
+q=q[2:$];//'{9,11,9,2}
+q=q[1:$-1];//'{11,9}</pre>
+Example No.2
+<pre>int q[$]='{5,7,9,11,2};
+int y;
+y=q.pop_front();//'{7,9,11,2}
+y=q.pop_back();//'{7,9,11}
+y=q.push_front(3);//'{3,7,9,11}
+y=q.push_front(1);//'{3,7,9,11,1}</pre>
