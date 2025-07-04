@@ -300,3 +300,58 @@ y=q.pop_front();//'{7,9,11,2}
 y=q.pop_back();//'{7,9,11}
 y=q.push_front(3);//'{3,7,9,11}
 y=q.push_front(1);//'{3,7,9,11,1}</pre>
+---
+### Structures 
++ Structure is the data type which is grouping of multiple variables, which can be of different types into a single object. 
++ There are Key features such as
+    1. It can hold different data types.
+    2. Variables present inside stucture is called members.
+    3. Individual members can acessed using dot"." operator.
+    4. These can be used with or without typedef to define a new type.
++ Syntax<br>
+  struct{data_type member_name1;<br>
+  data_type member_name1;<br>
+  ...}struct_instance;
++ Example No.1<br>
+  struct{int age; string name;}person;//here person is an instance of an unnamed struct.
+  person.age=22;//storing the value.
+  person.name="Bhavan";//storing of string.
+  $display("age=%0d,name=%s",person.age,persom.name);//accesing of variable.
+---
+### User defined da6ta type
++ This aloows to create custom data type that is created by the user using constructs like typedef.
++ Creste a new name for existing data type.
++ This helps to improve code readability and helps to simplify complex data types.
++ Syntax<br>
+  typedef data_type new_name;
++ Example No.1<br>
+  logic [7:0] byte_t;<br>
+  logic [7:0] byte_t2;<br>
+  logic [7:0] byte_t3;<br>
+  instead of this i can write <br>
+  typedef logic [7:0] byte_t;<br>
+  byte_t   byte_t2;<br>
+  byte_t   byte_t3;<br>
++ typedef withot stuctures<br>
+<pre>module tb;
+  struct{string veg; int count;}st_name;
+  intital begin
+  st_name.veg="salad";
+  st_name.count=2;
+  $display("ved=%s,count=%d",st_name.veg,st_name.count);
+  end 
+  endmodule</pre>
+  //If i have 2 instances such as <br>
+  struct{string veg; int count;}st_name,st_name1; <br>
+  //and i am changing the value with second instance after displaying the first instace declaration.<br>
+  st_name1.veg="sambar";<br>
+  st_name1.count=3;<br>
+  //and i am displaying  
+  $display ("veg=%s,count=%0d",st_name1.veg,st_name1.count);<br>
+  //now we will get value such as "st_name.veg=s_name1.veg=sambar" and "st_name.count=s_name1.count=3"<br>
+  //It is getting overridden to over come this problem  we can define two different stuctures and this will be long code  line, so instead of that we can use typedef.<br>
+  //i.e,<br>
+  typedef struct{string veg; int count;}st_name;<br>
+  st_name st_name1;
+---
+### Enumerated data type
