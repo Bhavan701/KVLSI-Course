@@ -50,7 +50,8 @@ There are 8 types.
 ---
 Question No.1
 Write a verilog code to print the defult value and the size of the variable.
-<pre>module test;
+```v
+  module test;
   logic a;
   byte b;
   bit c;
@@ -69,7 +70,8 @@ Write a verilog code to print the defult value and the size of the variable.
   initial begin
     $monitor ("sim time=%0t,a=%b,b=%b",$time,a,b);
   end
-endmodule</pre>
+endmodule
+```
 Output is 
 <pre>the default size of logic=1, default value =x 
 the default size of byte=8, default value =0 
@@ -102,7 +104,8 @@ There are the 2 types.
  4. Associative.
 ---
 ##### 1. Fixed.<br>
-<pre>module test;
+```v
+module test;
 integer a[0:9];
   int i;
   initial begin
@@ -120,16 +123,19 @@ integer a[0:9];
     a='{1,2,3,4,5,6,7,8,9,0};
     display ("a=%p",a);
   end   
-endmodule </pre>
+endmodule
+```
 + Two dimensional.
-<pre>module test;
+```v
+module test;
   integer a[0:4][0:4];//a[5][5] compact declaration
   initial begin
     foreach(a[i,j])
       a[i][j]=j+1;
     $display ("array=%p",a);
   end
-endmodule</pre>
+endmodule
+```
 + Output is
 <pre>array='{'{1, 2, 3, 4, 5}, '{1, 2, 3, 4, 5}, '{1, 2, 3, 4, 5}, '{1, 2, 3, 4, 5}, '{1, 2, 3, 4, 5}}</pre>
 + Fixed-size arrays can be either packed or unpacked.
@@ -141,7 +147,8 @@ endmodule</pre>
 + In a dynamic array, we can increase or decrease the size, but direct insertion and deletion are not possible.
 + Size is allocated at run time.
 + We can change the size. 
-<pre>module test;
+```v
+module test;
   int a[];
   initial begin
     $display("array=%p",a);//'{}
@@ -162,10 +169,12 @@ endmodule</pre>
     a.delete();
     $display("array=%p",a);//'{}
   end
-endmodule </pre>
+endmodule
+```
 + Two dimensional array.<br>
 Question No.1
-<pre>module test;
+```v
+module test;
   int a[][];
   initial begin
     a=new[5];
@@ -175,7 +184,8 @@ Question No.1
     foreach(a[i,j])
       $display ("array[%0d][%0d]=[%0d]",i,j,a[i][j]);
   end
-endmodule</pre>
+endmodule
+```
 Output is
 <pre>array='{'{0, 0} , '{0, 0} , '{0, 0} , '{0, 0} , '{0, 0} }
 array[0][0]=[0]
@@ -189,7 +199,8 @@ array[3][1]=[0]
 array[4][0]=[0]
 array[4][1]=[0]</pre>
 Question No.2
-<pre>module test;
+```v
+module test;
   int a[][];
   initial begin
     a=new[3];
@@ -200,7 +211,8 @@ Question No.2
     foreach(a[i,j])
     $display ("array[%0d][%0d]=[%0d]",i,j,a[i][j]);
   end
-endmodule</pre>
+endmodule
+```
 output is 
 <pre>array='{'{0, 0, 0} , '{0, 0} , '{0, 0, 0, 0} }
 array[0][0]=[0]
@@ -231,7 +243,8 @@ array[2][3]=[0]</pre>
 + We can directly insert or delete elements using built-in methods such as insert and delete.
 + size() method will return number of elements in queue.
 Example No.1
-<pre>module test;
+```v
+module test;
   int q1[$];
   int q2[$:5];//6 elements
   initial begin
@@ -248,7 +261,8 @@ Example No.1
     q2.delete (0);
     $display("q1=%p,q2=%p",q1,q2);
   end
-endmodule</pre>  
+endmodule
+```  
 Output is 
 <pre>q1='{},q2='{}
 q1='{1, 2, 3} ,q2='{1, 2, 3, 4, 5, 6} 
@@ -259,7 +273,8 @@ q1='{},q2='{1, 2, 3, 4, 5, 6}
 q1='{},q2='{2, 3, 4, 5, 6} </pre>
 Question No.1<br>
 Write a code to declare a unbounded queue of int type.Initialize this queue with 10  values. Delete 4th and 6th index values without using delete method. Insert 100 on last position and 50 on first position without using insert method.  
-<pre>module test;
+```v
+module test;
   int q[$];// declared unbounded queue int type
   initial begin
     q='{2,3,4,5,6,7,8,9,10,11};// initialized the value
@@ -269,7 +284,8 @@ Write a code to declare a unbounded queue of int type.Initialize this queue with
     q={50,q,100};// inserted 50 at first and 100 at last
     $display ("q=%p",q);
   end 
-endmodule </pre>
+endmodule 
+```
 Output is 
 <pre>q='{2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 q='{2, 3, 4, 5, 7, 9, 10, 11}
