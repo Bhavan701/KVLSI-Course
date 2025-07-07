@@ -1,13 +1,1 @@
-<pre> #include <stdio.h>
-int main()
-{
-    int age=25;
-    printf("Hi i am Bhavan kumar and my age is %d",age);
-    //declaring multiple variables
-    int age1,age2;
-    age1 =31;
-    printf("\nMy sisters age is %d\n",age1);
-    age2=age1;
-    printf("Age of my friend is %d",age2);
-   return 0;
-} </pre>
+
