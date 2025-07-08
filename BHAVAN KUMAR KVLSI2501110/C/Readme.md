@@ -118,3 +118,35 @@ size of char is 1
 size of double is 8
 size of float is 4
 ```
+Printing user defined value
+```c
+#include<stdio.h>
+int main(){
+    int a;
+    double b;
+    char c;
+    printf("Enter a int value :");
+    scanf("%d",&a);
+    printf("Enter a double value :");
+     scanf("\n%lf",&b);
+    printf("Enter a char value :");
+    scanf("\n%c",&c);
+    
+    printf("a=%0d",a);
+    printf("\nb=%lf",b);
+    printf("\nc=%c",c);
+    return 0;
+}
+//Output is
+Enter a int value :2
+Enter a double value :3
+Enter a char value :c
+a=2
+b=3.000000
+c=c
+
+```
++ Here "scanf" if used to teke input from user and store to a variable.
++ "%d" is a format specifer that the data is which type.
++ "&" represents memory addres and "&a" represents the memory addres of the a variable.
+---
