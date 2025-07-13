@@ -30,7 +30,7 @@ There are 4 types.
 ---
 ### 2-state data types.
 + In this all data type has a default value of 0 .
-+ Except bit by default all data types are signed and bit is unsigned. 
++ Except "bit" by default all data types are signed and bit is unsigned. 
 + If we drive x and z value to this data type it will give default value i.e it aloows either 0 or 1.
 There are 8 types.
 1. bit -> default size is 1-bit.
