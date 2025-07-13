@@ -46,7 +46,7 @@ There are 8 types.
 + real is same as double in c.
 + short real is same as float in c.
 + void does not return any value.
-+ $bits(variable_name) is a Keyword used to find the default size of that variable.
++ $bits(variable_name) here $bits is a Keyword used to find the default size of that variable.
 ---
 Question No.1
 Write a verilog code to print the defult value and the size of the variable.
