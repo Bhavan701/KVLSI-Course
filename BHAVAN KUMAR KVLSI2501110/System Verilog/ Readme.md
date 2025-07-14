@@ -372,4 +372,18 @@ y=q.push_front(1);//'{3,7,9,11,1}</pre>
   typedef struct{string veg; int count;}st_name;<br>
   st_name st_name1;
 ---
-### Enumerated data type
+## Pacakages
++ While we are including the two different methods which has same method name while including this two files and then try to call that one method in top module the simulator gets confused which method to be called this is known as module overlading to overcome this packages are used. Where we are giving  the two differnt packages and called in top module like "package_name.module_name".
++ Packages provide ways to have common code to be shared across multilple module.
++ It contains
+     1. Data types
+     2. Sub programs
+     3. Sequence
+     4. Property
++ Elements of the packags can be accessed by the oprerator "::" i.e scope resolution and  import keyword.
++ Import is used to access the element defined inside the packages without copying them to current location.<br>
+  &nbsp;&nbsp;&nbsp; import::elment_name;<br>
+  &nbsp;&nbsp;&nbsp; import::*;// * means all the package parts.
++ Nesting of packages is allowed.
+--- 
+
