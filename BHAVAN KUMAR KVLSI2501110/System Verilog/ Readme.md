@@ -47,6 +47,8 @@ There are 8 types.
 + short real is same as float in c.
 + void does not return any value.
 + $bits(variable_name) here $bits is a Keyword used to find the default size of that variable.
++ $size returns the number of elements.
++ If "int a[10]" here "$size" is "10" and "$bits" in "10*32=320". 
 ---
 Question No.1
 Write a verilog code to print the defult value and the size of the variable.
