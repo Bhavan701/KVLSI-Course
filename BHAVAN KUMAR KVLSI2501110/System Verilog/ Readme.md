@@ -359,31 +359,4 @@ y=q.push_front(1);//'{3,7,9,11,1}</pre>
   $display("ved=%s,count=%d",st_name.veg,st_name.count);
   end 
   endmodule</pre>
-  //If i have 2 instances such as <br>
-  struct{string veg; int count;}st_name,st_name1; <br>
-  //and i am changing the value with second instance after displaying the first instace declaration.<br>
-  st_name1.veg="sambar";<br>
-  st_name1.count=3;<br>
-  //and i am displaying  
-  $display ("veg=%s,count=%0d",st_name1.veg,st_name1.count);<br>
-  //now we will get value such as "st_name.veg=s_name1.veg=sambar" and "st_name.count=s_name1.count=3"<br>
-  //It is getting overridden to over come this problem  we can define two different stuctures and this will be long code  line, so instead of that we can use typedef.<br>
-  //i.e,<br>
-  typedef struct{string veg; int count;}st_name;<br>
-  st_name st_name1;
----
-## Pacakages
-+ While we are including the two different methods which has same method name while including this two files and then try to call that one method in top module the simulator gets confused which method to be called this is known as module overlading to overcome this packages are used. Where we are giving  the two differnt packages and called in top module like "package_name.module_name".
-+ Packages provide ways to have common code to be shared across multilple module.
-+ It contains
-     1. Data types
-     2. Sub programs
-     3. Sequence
-     4. Property
-+ Elements of the packags can be accessed by the oprerator "::" i.e scope resolution and  import keyword.
-+ Import is used to access the element defined inside the packages without copying them to current location.<br>
-  &nbsp;&nbsp;&nbsp; import::elment_name;<br>
-  &nbsp;&nbsp;&nbsp; import::*;// * means all the package parts.
-+ Nesting of packages is allowed.
---- 
-
+  
